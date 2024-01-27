@@ -14,6 +14,10 @@ public class ScoreCanvas : MonoBehaviour
 
     private float scoreChunk = 5f;
 
+    private float timeToAnimateBuffer;
+    
+    private float displayBufferPeriod = 1f;
+
     private void Update()
     {
         if (scoreBuffer > 0)
@@ -26,15 +30,20 @@ public class ScoreCanvas : MonoBehaviour
             return;
         }
         
-        if (scoreBuffer < scoreChunk)
+        ScoreBufferDisplay.SetText($"+{scoreBuffer.ToString("F0")}");
+
+        if (Time.time >= timeToAnimateBuffer)
         {
-            scoreToDisplay += scoreBuffer;
-            scoreBuffer = 0;
-        }
-        else
-        {
-            scoreToDisplay += scoreChunk;
-            scoreBuffer -= scoreChunk;
+            if (scoreBuffer < scoreChunk)
+            {
+                scoreToDisplay += scoreBuffer;
+                scoreBuffer = 0;
+            }
+            else
+            {
+                scoreToDisplay += scoreChunk;
+                scoreBuffer -= scoreChunk;
+            }
         }
 
         ScoreDisplay.SetText($"Score: {scoreToDisplay.ToString("F0")}");
@@ -52,5 +61,7 @@ public class ScoreCanvas : MonoBehaviour
     private void HandleDamageUpdate(float damage)
     {
         scoreBuffer = damage;
+
+        timeToAnimateBuffer = Time.time + displayBufferPeriod;
     }
 }
