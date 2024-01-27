@@ -369,7 +369,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -521,6 +521,8 @@ MonoBehaviour:
   CameraTilt: {fileID: 2033263706312188810}
   horizontalSpeed: 1
   verticalSpeed: 1
+  maxTilt: 70
+  minTilt: 1
 --- !u!1 &1197112060
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +695,7 @@ MonoBehaviour:
   ShoulderOffset: {x: 0, y: 1, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 0.5
-  CameraDistance: 2
+  CameraDistance: 8
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0

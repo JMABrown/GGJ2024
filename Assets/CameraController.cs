@@ -15,38 +15,79 @@ public class CameraController : MonoBehaviour
 
     public GameObject CameraTilt;
 
-    public float horizontalSpeed = 1f;
+    public float horizontalLookSensitivity = 1f;
 
-    public float verticalSpeed = 1f;
+    public float verticalLookSensitivity = 1f;
+
+    public float maxTilt = 70f;
+
+    public float minTilt = 1f;
 
     //private GameObject followPoint;
     
     private CinemachineVirtualCamera VirtualCam;
+
+    private bool hasApplicationFocus = true;
     
     // Start is called before the first frame update
     void Awake()
     {
         VirtualCam = GetComponent<CinemachineVirtualCamera>();
 
-        //followPoint = new GameObject("Virtual Target");
-
         VirtualCam.LookAt = Target.transform;
-        VirtualCam.Follow = CameraRigRoot.transform;
+        VirtualCam.Follow = CameraTilt.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         CameraRigRoot.transform.position = Target.transform.position;
+     
+        if (!hasApplicationFocus)
+        {
+            return;
+        }
         
-        float xDelta = horizontalSpeed * Input.GetAxis("Mouse X");
-        float yDelta = verticalSpeed * Input.GetAxis("Mouse Y");
+        float xDelta = horizontalLookSensitivity * Input.GetAxis("Mouse X");
+        float yDelta = verticalLookSensitivity * Input.GetAxis("Mouse Y");
         
-        //followPoint.transform.Rotate(yDelta, xDelta, 0);
-        //followPoint.transform.Rotate(yDelta, 0, 0);
-        //followPoint.transform.Rotate(0, xDelta, 0);
         CameraRotate.transform.Rotate(Vector3.up, xDelta);
-        CameraTilt.transform.Rotate(Vector3.right, yDelta);
         
+        CameraTilt.transform.Rotate(Vector3.right, -yDelta);
+        
+        // Clamping the tilt
+        var angles = CameraTilt.transform.localRotation.eulerAngles;
+        
+        if (yDelta > 0)
+        {
+            if (angles.x > 330f)
+            {
+                angles.x = minTilt;
+            }
+            angles.x = Mathf.Max(angles.x, minTilt);
+        }
+
+        if (yDelta < 0)
+        {
+            angles.x = Mathf.Min(angles.x, maxTilt);
+        }
+
+        angles.y = 0f;
+        angles.z = 0f;
+        CameraTilt.transform.localEulerAngles = angles;
+    }
+    
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            hasApplicationFocus = true;
+        }
+        else
+        {
+            hasApplicationFocus = false;
+        }
     }
 }
