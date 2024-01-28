@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class DamageSensor : MonoBehaviour
 {
+    public class DamageInfo
+    {
+        public float ImpactSquareMagnitude;
+        public Vector3 Impulse;
+    }
+    
     public float Weight = 1f;
     
     public bool Log = false;

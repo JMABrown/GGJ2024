@@ -8,14 +8,21 @@ public class CharacterController : MonoBehaviour
     public CharacterBody CharacterBody;
     public Animator anim;
     private Rigidbody rb;
+    private Camera camera;
+
+    private GameObject lookVector;
 
     private void Awake()
     {
         DamageManager.OnDamageReported.AddListener(HandleDamageUpdate);
+        camera = Camera.main;
+
+        lookVector = new GameObject("Look Vector");
     }
     
     private void HandleDamageUpdate(float damage)
     {
+        //return;
         CharacterBody.GoRagdoll();
         StartCoroutine(GetBackUpRoutine());
     }
@@ -42,13 +49,25 @@ public class CharacterController : MonoBehaviour
 
     private void Move()
     {
+        var lookDirection = camera.gameObject.transform.forward;
+
+        lookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
+        
+        Debug.Log(lookDirection);
+
         float verticalAxis = Input.GetAxis("Vertical");
         float horizontalAxis = Input.GetAxis("Horizontal");
 
-        Vector3 movement = this.transform.forward * verticalAxis + this.transform.right * horizontalAxis;
+        lookVector.transform.forward = lookDirection;
+
+        Vector3 movement = lookVector.transform.forward * verticalAxis + lookVector.transform.right * horizontalAxis;
+
+        //Vector3 movement = new Vector3(lookDirection.x * horizontalAxis, 0f, lookDirection.z * verticalAxis);
         //movement.Normalize();
 
-        this.transform.position += movement * 0.15f;
+        rb.AddForce(movement * 10f, ForceMode.Force);
+        
+        //this.transform.position += movement * 0.15f;
 
         //this.anim.SetFloat("vertical", verticalAxis);
         //this.anim.SetFloat("horizontal", horizontalAxis);
