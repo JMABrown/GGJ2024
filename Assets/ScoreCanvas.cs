@@ -12,7 +12,7 @@ public class ScoreCanvas : MonoBehaviour
     private float scoreBuffer;
     private float scoreToDisplay;
 
-    private float scoreChunk = 5f;
+    private float scoreChunk = 15f;
 
     private float timeToAnimateBuffer;
     
@@ -60,7 +60,7 @@ public class ScoreCanvas : MonoBehaviour
 
     private void HandleDamageUpdate(float damage)
     {
-        scoreBuffer = damage;
+        scoreBuffer += damage;
 
         timeToAnimateBuffer = Time.time + displayBufferPeriod;
     }

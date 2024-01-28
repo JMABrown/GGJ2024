@@ -7,15 +7,14 @@ public class DamageSensor : MonoBehaviour
 {
     public float Weight = 1f;
     
-    public bool Log;
+    public bool Log = false;
     
-    private static float minImpulseRequired = 5f;
+    private static float minImpulseRequired = 10f;
 
     private DamageManager damageManger;
 
     private void Awake()
     {
-        //DamageManager.Instance.SubscribeSensor(this);
         damageManger = DamageManager.Instance;
     }
 
