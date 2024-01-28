@@ -601,7 +601,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 834576460}
-  anim: {fileID: 0}
+  anim: {fileID: 834576446}
+  animator: {fileID: 834576446}
+  rigidBody: {fileID: 834576461}
+  acceleration: 5
+  rotationScale: 90
+  rotationSpeed: 5
 --- !u!114 &834576460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,6 +1970,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 0}
   anim: {fileID: 0}
+  animator: {fileID: 0}
+  rigidBody: {fileID: 0}
+  acceleration: 5
+  rotationScale: 90
+  rotationSpeed: 5
 --- !u!54 &962926302
 Rigidbody:
   m_ObjectHideFlags: 0
