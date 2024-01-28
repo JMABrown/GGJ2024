@@ -1428,6 +1428,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &834576494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4382554126983495595, guid: 81bb9eea30387e442899949a80011e55, type: 3}
+  m_PrefabInstance: {fileID: 834576444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &837951231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,8 +2722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlcoholLevel: 0
-  SpawnTarget: {fileID: 0}
-  DrinkPrefabSpawn: {fileID: 0}
+  SpawnTarget: {fileID: 834576494}
+  DrinkPrefabSpawn: {fileID: 5143218760660122288, guid: 55f51e5996e40cf41b70281862ba84ff, type: 3}
 --- !u!1 &1359082013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,6 +3033,7 @@ GameObject:
   - component: {fileID: 1432196116}
   - component: {fileID: 1432196118}
   - component: {fileID: 1432196117}
+  - component: {fileID: 1432196119}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -3083,6 +3089,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1432196119
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432196115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1453938204
 GameObject:
   m_ObjectHideFlags: 0
