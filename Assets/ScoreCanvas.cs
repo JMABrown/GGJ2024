@@ -58,9 +58,9 @@ public class ScoreCanvas : MonoBehaviour
         ScoreBufferDisplay.enabled = false;
     }
 
-    private void HandleDamageUpdate(float damage)
+    private void HandleDamageUpdate(DamageInfo damage)
     {
-        scoreBuffer += damage;
+        scoreBuffer += damage.ImpactSquareMagnitude;
 
         timeToAnimateBuffer = Time.time + displayBufferPeriod;
     }

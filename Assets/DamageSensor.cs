@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class DamageInfo
+{
+    public float ImpactSquareMagnitude = 0f;
+    public Vector3 Impulse = Vector3.zero;
+    public float Weight = 1f;
+}
+
 public class DamageSensor : MonoBehaviour
 {
-    public class DamageInfo
-    {
-        public float ImpactSquareMagnitude;
-        public Vector3 Impulse;
-    }
-    
-    public float Weight = 1f;
+
+    public float SensorWeight = 1f;
     
     public bool Log = false;
     
@@ -39,6 +41,13 @@ public class DamageSensor : MonoBehaviour
             Debug.Log(collision.GetContact(0).separation);
         }
 
-        damageManger.ReportDamage(impactSquareMagnitude * Weight);
+        var reportedDamage = new DamageInfo()
+        {
+            ImpactSquareMagnitude = impactSquareMagnitude,
+            Impulse = collision.impulse,
+            Weight = SensorWeight
+        };
+
+        damageManger.ReportDamage(reportedDamage);
     }
 }

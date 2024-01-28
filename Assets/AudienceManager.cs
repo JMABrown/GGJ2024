@@ -28,9 +28,9 @@ public class AudienceManager : MonoSingleton<AudienceManager>
         LaughLevel -= DecayRate;
     }
     
-    private void HandleDamageUpdate(float damage)
+    private void HandleDamageUpdate(DamageInfo damage)
     {
-        LaughLevel += LaughIncreaseFactor * damage;
+        LaughLevel += LaughIncreaseFactor * damage.ImpactSquareMagnitude;
         LaughLevel = Mathf.Min(LaughLevel, MaxLaughLevel);
     }
 }

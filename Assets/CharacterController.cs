@@ -20,9 +20,10 @@ public class CharacterController : MonoBehaviour
         lookVector = new GameObject("Look Vector");
     }
     
-    private void HandleDamageUpdate(float damage)
+    private void HandleDamageUpdate(DamageInfo damage)
     {
         //return;
+        rb.AddForce(damage.Impulse, ForceMode.Impulse);
         CharacterBody.GoRagdoll();
         StartCoroutine(GetBackUpRoutine());
     }
@@ -32,6 +33,7 @@ public class CharacterController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         transform.rotation = Quaternion.identity;
         CharacterBody.GoAnimated();
+        CharacterBody.ResetPosition();
     }
 
     // Start is called before the first frame update
@@ -53,8 +55,6 @@ public class CharacterController : MonoBehaviour
 
         lookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
         
-        Debug.Log(lookDirection);
-
         float verticalAxis = Input.GetAxis("Vertical");
         float horizontalAxis = Input.GetAxis("Horizontal");
 
@@ -77,7 +77,7 @@ public class CharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            this.rb.AddForce(Vector3.up * 30, ForceMode.Impulse);
+            this.rb.AddForce(Vector3.up * 15, ForceMode.Impulse);
             //this.anim.SetBool("jump", true);
         }
         else

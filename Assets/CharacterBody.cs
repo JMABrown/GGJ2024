@@ -14,7 +14,11 @@ public class CharacterBody : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private GameObject hips;
+
     private Avatar cachedAvatar;
+    private Avatar startingAvatar;
     
     private List<Collider> colliders = new List<Collider>();
     private List<Rigidbody> rigidBodies = new List<Rigidbody>();
@@ -28,6 +32,7 @@ public class CharacterBody : MonoBehaviour
             collider.gameObject.AddComponent<DamageSensor>();
         }
         GoAnimated();
+        startingAvatar = animator.avatar;
     }
 
     public void GoRagdoll()
@@ -53,11 +58,11 @@ public class CharacterBody : MonoBehaviour
             rigidBody.isKinematic = true;
         }
 
-        if (animator.avatar != null)
-        {
-            cachedAvatar = animator.avatar;
-        }
-        animator.avatar = null;
+        //if (animator.avatar != null)
+        //{
+        //    cachedAvatar = animator.avatar;
+        //}
+        //animator.avatar = null;
         animator.enabled = false;
     }
     
@@ -84,10 +89,15 @@ public class CharacterBody : MonoBehaviour
             rigidBody.useGravity = true;
         }
         
-        if (cachedAvatar != null)
-        {
-            animator.avatar = cachedAvatar;
-        }
+        //if (cachedAvatar != null)
+        //{
+        //    animator.avatar = startingAvatar;
+        //}
         animator.enabled = true;
+    }
+
+    public void ResetPosition()
+    {
+        hips.transform.localPosition = Vector3.zero;
     }
 }
