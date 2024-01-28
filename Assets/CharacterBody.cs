@@ -13,9 +13,8 @@ public class CharacterBody : MonoBehaviour
     
     [SerializeField]
     private Animator animator;
-
-    [SerializeField]
-    private GameObject hips;
+    
+    public GameObject Hips;
 
     private Avatar cachedAvatar;
     private Avatar startingAvatar;
@@ -47,16 +46,17 @@ public class CharacterBody : MonoBehaviour
             collider.isTrigger = true;
         }
         
+        foreach (var rigidBody in controllerRigidBodies)
+        {
+            rigidBody.isKinematic = true;
+        }
+        
         foreach (var rigidBody in rigidBodies)
         {
             rigidBody.isKinematic = false;
             rigidBody.useGravity = true;
         }
         
-        foreach (var rigidBody in controllerRigidBodies)
-        {
-            rigidBody.isKinematic = true;
-        }
 
         //if (animator.avatar != null)
         //{
@@ -98,6 +98,6 @@ public class CharacterBody : MonoBehaviour
 
     public void ResetPosition()
     {
-        hips.transform.localPosition = Vector3.zero;
+        Hips.transform.localPosition = Vector3.zero;
     }
 }

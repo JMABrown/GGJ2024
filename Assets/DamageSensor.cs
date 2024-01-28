@@ -17,7 +17,7 @@ public class DamageSensor : MonoBehaviour
     
     public bool Log = false;
     
-    private static float minImpulseRequired = 10f;
+    private static float minImpulseRequired = 15f;
 
     private DamageManager damageManger;
 

@@ -12,7 +12,7 @@ public class ScoreCanvas : MonoBehaviour
     private float scoreBuffer;
     private float scoreToDisplay;
 
-    private float scoreChunk = 15f;
+    private float scoreChunk = 555f;
 
     private float timeToAnimateBuffer;
     

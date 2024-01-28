@@ -12,6 +12,8 @@ public class CharacterController : MonoBehaviour
 
     private GameObject lookVector;
 
+    private Coroutine StandUpRoutine;
+
     private void Awake()
     {
         DamageManager.OnDamageReported.AddListener(HandleDamageUpdate);
@@ -25,14 +27,21 @@ public class CharacterController : MonoBehaviour
         //return;
         rb.AddForce(damage.Impulse, ForceMode.Impulse);
         CharacterBody.GoRagdoll();
-        StartCoroutine(GetBackUpRoutine());
+        if (StandUpRoutine != null)
+        {
+            StopCoroutine(StandUpRoutine);
+        }
+        StandUpRoutine = StartCoroutine(GetBackUpRoutine());
     }
 
     private IEnumerator GetBackUpRoutine()
     {
         yield return new WaitForSeconds(3f);
+        var newPosition = CharacterBody.Hips.transform.position;
+        newPosition = new Vector3(newPosition.x, newPosition.y + 0.2f, newPosition.z);
         transform.rotation = Quaternion.identity;
         CharacterBody.GoAnimated();
+        gameObject.transform.position = newPosition;
         CharacterBody.ResetPosition();
     }
 
