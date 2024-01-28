@@ -65,7 +65,7 @@ public class CharacterController : MonoBehaviour
         //Vector3 movement = new Vector3(lookDirection.x * horizontalAxis, 0f, lookDirection.z * verticalAxis);
         //movement.Normalize();
 
-        rb.AddForce(movement * 10f, ForceMode.Force);
+        rb.AddForce(movement * (1000f * Time.deltaTime), ForceMode.Force);
         
         //this.transform.position += movement * 0.15f;
 
@@ -77,7 +77,7 @@ public class CharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            this.rb.AddForce(Vector3.up * 3 * Time.deltaTime, ForceMode.Impulse);
+            this.rb.AddForce(Vector3.up * 30, ForceMode.Impulse);
             //this.anim.SetBool("jump", true);
         }
         else
