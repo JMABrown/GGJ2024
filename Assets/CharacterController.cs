@@ -54,7 +54,25 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        //Move();
+        
+        var lookDirection = camera.gameObject.transform.forward;
+
+        lookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
+        
+        float verticalAxis = Input.GetAxis("Vertical");
+        //float horizontalAxis = Input.GetAxis("Horizontal");
+
+        lookVector.transform.forward = lookDirection;
+        
+        if (animator != null && animator.enabled)
+        {
+            float curSpeed = animator.GetFloat("Speed");
+            curSpeed = Mathf.Lerp(curSpeed, Mathf.Clamp01(verticalAxis), acceleration * Time.deltaTime);
+            rigidBody.MoveRotation(Quaternion.Slerp(rigidBody.rotation, Quaternion.LookRotation(lookDirection, Vector3.up), rotationSpeed * Time.time * Mathf.Abs(verticalAxis)));
+            animator.SetFloat("Speed", curSpeed);
+        }
+        
         Jump();
     }
 
@@ -80,6 +98,21 @@ public class CharacterController : MonoBehaviour
 
         //this.anim.SetFloat("vertical", verticalAxis);
         //this.anim.SetFloat("horizontal", horizontalAxis);
+    }
+    
+    [SerializeField] private Animator animator = null;
+    [SerializeField] private Rigidbody rigidBody = null;
+    [SerializeField] private float acceleration = 5;
+    [SerializeField] private float rotationScale = 90;
+    [SerializeField] private float rotationSpeed = 5;
+    private void OnAnimatorMove()
+    {
+        if (animator != null)
+        {
+            var velocity = animator.velocity;
+            velocity.y = rigidBody.velocity.y;
+            rigidBody.velocity = velocity;
+        }
     }
 
     private void Jump()
