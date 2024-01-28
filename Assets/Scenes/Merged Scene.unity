@@ -2806,7 +2806,6 @@ GameObject:
   - component: {fileID: 1328332671}
   - component: {fileID: 1328332670}
   - component: {fileID: 1328332672}
-  - component: {fileID: 1328332673}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2830,6 +2829,7 @@ MonoBehaviour:
   MaxLaughLevel: 500
   DecayRate: 0.1
   LaughIncreaseFactor: 0.25
+  gameOverText: {fileID: 741523007}
 --- !u!4 &1328332671
 Transform:
   m_ObjectHideFlags: 0
@@ -2859,19 +2859,6 @@ MonoBehaviour:
   AlcoholLevel: 0
   SpawnTarget: {fileID: 834576494}
   DrinkPrefabSpawn: {fileID: 5143218760660122288, guid: 55f51e5996e40cf41b70281862ba84ff, type: 3}
---- !u!114 &1328332673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328332669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4acf797f40f98541b0f78867d6baa8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverText: {fileID: 741523007}
 --- !u!1 &1359082013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,6 +3584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1328332669}
   timerUI: {fileID: 1646065774}
+  gameOverText: {fileID: 741523007}
 --- !u!1001 &1657004432
 PrefabInstance:
   m_ObjectHideFlags: 0

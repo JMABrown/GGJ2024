@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AudienceManager : MonoSingleton<AudienceManager>
 {
@@ -15,6 +16,8 @@ public class AudienceManager : MonoSingleton<AudienceManager>
 
     public float LaughAsFraction => LaughLevel / MaxLaughLevel;
 
+    public TextMeshProUGUI gameOverText;
+
     private void Start()
     {
         LaughLevel = MaxLaughLevel;
@@ -26,6 +29,7 @@ public class AudienceManager : MonoSingleton<AudienceManager>
     private void Update()
     {
         LaughLevel -= DecayRate;
+        CheckGameOver();
     }
     
     private void HandleDamageUpdate(DamageInfo damage)
@@ -39,7 +43,8 @@ public class AudienceManager : MonoSingleton<AudienceManager>
         if (LaughLevel <= 0)
         {
             //game over
-
+            gameOverText.SetText($"GAME OVER");
+            Debug.Log("game over");
         }
     }
 }

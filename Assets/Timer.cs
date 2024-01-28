@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public GameObject manager;
 
     public TextMeshProUGUI timerUI;
+    public TextMeshProUGUI gameOverText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         UpdateTimer();
+        CheckGameOver();
     }
 
     private void UpdateTimer()
@@ -39,6 +41,8 @@ public class Timer : MonoBehaviour
         if (timer <= 0)
         {
             //game over
+            gameOverText.SetText($"GAME OVER");
+            Debug.Log("game over");
         }
     }
 }
