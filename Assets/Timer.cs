@@ -31,9 +31,9 @@ public class Timer : MonoBehaviour
         timer -= Time.deltaTime;
         minutes = ((int)timer / 60);
         seconds = (timer % 60).ToString("F0");
-
+        timerUI.SetText($"{minutes}:{seconds}");
         // use minutes/seconds to display time in UI
-        if (minutes == 0)
+        /*if (minutes == 0)
         {
             //timerUI.text = seconds;
             timerUI.SetText($"{seconds}");
@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
         {
             //timerUI.text = (minutes + ":" + seconds).ToString();
             timerUI.SetText($"{minutes}:{seconds}");
-        }
+        }*/
 
 
     }
