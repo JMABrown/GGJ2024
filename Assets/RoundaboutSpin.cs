@@ -13,6 +13,6 @@ public class RoundaboutSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(10.0f, 0f, 0f, Space.Self);
+        this.transform.Rotate(0f, 7.0f, 0f, Space.Self);
     }
 }
