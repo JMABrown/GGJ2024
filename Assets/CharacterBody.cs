@@ -56,7 +56,6 @@ public class CharacterBody : MonoBehaviour
             rigidBody.isKinematic = false;
             rigidBody.useGravity = true;
         }
-        
 
         //if (animator.avatar != null)
         //{

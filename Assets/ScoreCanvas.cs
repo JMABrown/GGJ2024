@@ -60,7 +60,9 @@ public class ScoreCanvas : MonoBehaviour
 
     private void HandleDamageUpdate(DamageInfo damage)
     {
-        scoreBuffer += damage.ImpactSquareMagnitude;
+        var scoreMultiplier = Mathf.Max(AlcoholManager.Instance.AlcoholLevel, 1f);
+        
+        scoreBuffer += damage.ImpactSquareMagnitude * scoreMultiplier;
 
         timeToAnimateBuffer = Time.time + displayBufferPeriod;
     }

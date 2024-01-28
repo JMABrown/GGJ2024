@@ -17,7 +17,7 @@ public class DamageSensor : MonoBehaviour
     
     public bool Log = false;
     
-    private static float minImpulseRequired = 15f;
+    private float minImpulseRequired = 50f;
 
     private DamageManager damageManger;
 
@@ -28,7 +28,8 @@ public class DamageSensor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var impactSquareMagnitude = collision.impulse.sqrMagnitude;
+        //var impactSquareMagnitude = collision.impulse.sqrMagnitude;
+        var impactSquareMagnitude = collision.relativeVelocity.sqrMagnitude;
         if (impactSquareMagnitude < minImpulseRequired)
         {
             return;

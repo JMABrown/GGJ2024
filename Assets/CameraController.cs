@@ -42,6 +42,8 @@ public class CameraController : MonoBehaviour
         VirtualCam.Follow = CameraTilt.transform;
         
         noise = VirtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        
+        OnApplicationFocus(true);
     }
 
     // Update is called once per frame
