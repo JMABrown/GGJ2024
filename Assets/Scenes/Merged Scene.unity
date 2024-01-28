@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4c247387b91f5438541941d2809ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterBody: {fileID: 834576460}
   anim: {fileID: 0}
 --- !u!114 &834576460
 MonoBehaviour:
@@ -2090,6 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4c247387b91f5438541941d2809ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterBody: {fileID: 0}
   anim: {fileID: 0}
 --- !u!54 &962926302
 Rigidbody:
