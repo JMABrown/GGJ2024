@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     private float timer;
     private int minutes;
     private string seconds;
+    public GameObject manager;
 
     public TextMeshProUGUI timerUI;
 
@@ -32,18 +33,12 @@ public class Timer : MonoBehaviour
         minutes = ((int)timer / 60);
         seconds = (timer % 60).ToString("F0");
         timerUI.SetText($"{minutes}:{seconds}");
-        // use minutes/seconds to display time in UI
-        /*if (minutes == 0)
+    }
+    private void CheckGameOver()
+    {
+        if (timer <= 0)
         {
-            //timerUI.text = seconds;
-            timerUI.SetText($"{seconds}");
+            //game over
         }
-        else
-        {
-            //timerUI.text = (minutes + ":" + seconds).ToString();
-            timerUI.SetText($"{minutes}:{seconds}");
-        }*/
-
-
     }
 }

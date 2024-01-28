@@ -33,4 +33,13 @@ public class AudienceManager : MonoSingleton<AudienceManager>
         LaughLevel += LaughIncreaseFactor * damage.ImpactSquareMagnitude;
         LaughLevel = Mathf.Min(LaughLevel, MaxLaughLevel);
     }
+
+    private void CheckGameOver()
+    {
+        if (LaughLevel <= 0)
+        {
+            //game over
+
+        }
+    }
 }
