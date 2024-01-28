@@ -23,9 +23,13 @@ public class CameraController : MonoBehaviour
 
     public float minTilt = 1f;
 
+    public float noiseIntensity = 5f;
+
     //private GameObject followPoint;
     
     private CinemachineVirtualCamera VirtualCam;
+
+    private CinemachineBasicMultiChannelPerlin noise;
 
     private bool hasApplicationFocus = true;
     
@@ -36,6 +40,8 @@ public class CameraController : MonoBehaviour
 
         VirtualCam.LookAt = Target.transform;
         VirtualCam.Follow = CameraTilt.transform;
+        
+        noise = VirtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     // Update is called once per frame
@@ -75,6 +81,10 @@ public class CameraController : MonoBehaviour
         angles.y = 0f;
         angles.z = 0f;
         CameraTilt.transform.localEulerAngles = angles;
+
+        noise.m_AmplitudeGain = AlcoholManager.Instance.AlcoholPercentage * noiseIntensity;
+        //AlcoholManager.Instance.AlcoholLevel
+        //VirtualCam.GetCinemachineComponent<NoiseSettings>()
     }
     
     void OnApplicationFocus(bool hasFocus)

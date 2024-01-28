@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -653,7 +653,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000012514744, y: 0.018354699, z: 0.0000000013969841}
+  m_ConnectedAnchor: {x: 0.0000000012514744, y: 0.018354699, z: 9.313227e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -715,7 +715,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0042681615, y: -0.0018367127, z: 0.00023813013}
+  m_ConnectedAnchor: {x: -0.004268162, y: -0.001836709, z: 0.0002381299}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -834,7 +834,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000024737812, y: 0.018354703, z: -0.0000000020954753}
+  m_ConnectedAnchor: {x: 0.0000000024737812, y: 0.018354703, z: -0.0000000016298141}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -896,7 +896,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.004189, y: -0.0018971729, z: 0.00023926902}
+  m_ConnectedAnchor: {x: 0.004189, y: -0.0018971693, z: 0.00023926879}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -986,7 +986,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000016123524, y: 0.012645374, z: 0.0000000067520887}
+  m_ConnectedAnchor: {x: -0.000000015599655, y: 0.012645378, z: 0.000000005820766}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1048,7 +1048,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.009952087, y: 0.014205926, z: -0.0019262754}
+  m_ConnectedAnchor: {x: -0.009952087, y: 0.014205932, z: -0.0019262782}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1110,7 +1110,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000060054415, y: 0.014450605, z: -0.0011395571}
+  m_ConnectedAnchor: {x: 0.00006005441, y: 0.014450605, z: -0.0011395571}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1213,7 +1213,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000014901163, y: 0.012645374, z: -8.1490725e-10}
+  m_ConnectedAnchor: {x: 0.00000001396984, y: 0.012645377, z: -2.3283064e-10}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1275,7 +1275,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0099454755, y: 0.014189461, z: -0.0019338044}
+  m_ConnectedAnchor: {x: 0.0099454755, y: 0.014189469, z: -0.0019338031}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1365,7 +1365,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000070758506, y: 0.02168057, z: 0.0016807895}
+  m_ConnectedAnchor: {x: 0.00000070759233, y: 0.021680577, z: 0.0016807906}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2666,6 +2666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328332671}
   - component: {fileID: 1328332670}
+  - component: {fileID: 1328332672}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2703,6 +2704,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1328332672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328332669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dbda0e532910143b848661dc8612fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlcoholLevel: 0
+  SpawnTarget: {fileID: 0}
+  DrinkPrefabSpawn: {fileID: 0}
 --- !u!1 &1359082013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,6 +3153,7 @@ MonoBehaviour:
   verticalLookSensitivity: 1
   maxTilt: 70
   minTilt: 1
+  noiseIntensity: 5
 --- !u!114 &1540686070
 MonoBehaviour:
   m_ObjectHideFlags: 0
