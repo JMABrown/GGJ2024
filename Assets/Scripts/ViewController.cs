@@ -14,12 +14,17 @@ public class ViewController : MonoBehaviour
     public IpAddressUiElement NextPacketElementPrefab;
     public List<IpAddressUiElement> NextPacketElementInstances = new List<IpAddressUiElement>();
     public Image RateFillBar;
+
+    public CrazyWiggle ComboWiggle;
+    public GameObject ComboContainer;
+    public TextMeshProUGUI ComboText;
     
     void Start()
     {
         _model.OnRouterAddressChanged += HandleRouterChanged;
         _model.OnCurrentPacketChanged += HandleCurrentPacketChanged;
         _model.OnNextPacketsChanged += HandleNextPacketsChanged;
+        _model.OnComboChanged += HandleComboChanged;
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
@@ -84,11 +89,13 @@ public class ViewController : MonoBehaviour
             {
                 Debug.Log("Correct");
                 _model.CorrectAnswers += 1;
+                _model.Combo += 1;
                 // Correct
             }
             else
             {
                 Debug.Log("Wrong");
+                _model.Combo = 0;
                 // Wrong
             }
 
@@ -102,11 +109,13 @@ public class ViewController : MonoBehaviour
             if (!_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
             {
                 _model.CorrectAnswers += 1;
+                _model.Combo += 1;
                 Debug.Log("Correct");
                 // Correct
             }
             else
             {
+                _model.Combo = 0;
                 Debug.Log("Wrong");
                 // Wrong
             }
@@ -155,6 +164,24 @@ public class ViewController : MonoBehaviour
             var newElementComponent = newElement.GetComponent<IpAddressUiElement>();
             newElementComponent.Setup(packet);
             NextPacketElementInstances.Add(newElementComponent);
+        }
+    }
+
+    public void HandleComboChanged(int newCombo)
+    {
+        if (newCombo <= 0)
+        {
+            ComboContainer.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (newCombo > 1)
+            {
+                ComboContainer.gameObject.SetActive(true);
+                ComboText.text = $"COMBO!!! x{newCombo}";
+                ComboWiggle.Max = newCombo;
+                ComboWiggle.Min = -newCombo;
+            }
         }
     }
 }

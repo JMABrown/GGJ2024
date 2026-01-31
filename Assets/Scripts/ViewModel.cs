@@ -10,6 +10,7 @@ public class ViewModel
     public event Action<SubnetAddress> OnCurrentPacketChanged;
     public event Action<SubnetAddress> OnRouterAddressChanged;
     public event Action<int> OnCorrectAnswersChanged;
+    public event Action<int> OnComboChanged;
 
     public int CorrectAnswers
     {
@@ -24,6 +25,19 @@ public class ViewModel
         }
     }
     private int _correctAnswers;
+    public int Combo
+    {
+        set
+        {
+            _combo = value;
+            OnComboChanged?.Invoke(_combo);
+        }
+        get
+        {
+            return _combo;
+        }
+    }
+    private int _combo;
     public float CorrectAnswerRate
     {
         get
