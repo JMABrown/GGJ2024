@@ -62,4 +62,9 @@ public class IpAddress
             Fourth = ~this.Fourth
         };
     }
+
+    public override string ToString()
+    {
+        return $"{First}.{Second}.{Third}.{Fourth}";
+    }
 }
