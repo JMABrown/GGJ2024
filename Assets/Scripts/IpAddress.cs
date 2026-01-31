@@ -40,4 +40,26 @@ public class IpAddress
             Fourth = this.Fourth & other.Fourth
         };
     }
+
+    public IpAddress ORwiseMergeWith(IpAddress other)
+    {
+        return new IpAddress()
+        {
+            First = this.First | other.First,
+            Second = this.Second | other.Second,
+            Third = this.Third | other.Third,
+            Fourth = this.Fourth | other.Fourth
+        };
+    }
+
+    public IpAddress GetInverted()
+    {
+        return new IpAddress()
+        {
+            First = ~this.First,
+            Second = ~this.Second,
+            Third = ~this.Third,
+            Fourth = ~this.Fourth
+        };
+    }
 }
