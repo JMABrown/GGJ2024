@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class ViewModel
 {
@@ -8,6 +9,34 @@ public class ViewModel
     public event Action<EventfulQueue<SubnetAddress>> OnNextPacketsChanged;
     public event Action<SubnetAddress> OnCurrentPacketChanged;
     public event Action<SubnetAddress> OnRouterAddressChanged;
+    public event Action<int> OnCorrectAnswersChanged;
+
+    public int CorrectAnswers
+    {
+        set
+        {
+            _correctAnswers = value;
+            OnCorrectAnswersChanged?.Invoke(_correctAnswers);
+        }
+        get
+        {
+            return _correctAnswers;
+        }
+    }
+    private int _correctAnswers;
+    public float CorrectAnswerRate
+    {
+        get
+        {
+            if (Time.time == 0)
+            {
+                return 0;
+            }
+            return CorrectAnswers / Time.time;
+        }
+    }
+
+    public float MinimumAnswerRate;
 
     public SubnetAddress CurrentPacket
     {

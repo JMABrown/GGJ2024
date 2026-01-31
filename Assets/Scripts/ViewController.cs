@@ -3,6 +3,7 @@ using System.Xml;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ViewController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ViewController : MonoBehaviour
     public TextMeshProUGUI CurrentPacketText;
     public IpAddressUiElement NextPacketElementPrefab;
     public List<IpAddressUiElement> NextPacketElementInstances = new List<IpAddressUiElement>();
+    public Image RateFillBar;
     
     void Start()
     {
@@ -19,6 +21,43 @@ public class ViewController : MonoBehaviour
         _model.OnCurrentPacketChanged += HandleCurrentPacketChanged;
         _model.OnNextPacketsChanged += HandleNextPacketsChanged;
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
@@ -32,15 +71,71 @@ public class ViewController : MonoBehaviour
         {
             _model.CurrentPacket = _model.NextPackets.Dequeue();
         }
+        
+        //block input
+        if (_model.CurrentPacket == null)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+            {
+                Debug.Log("Correct");
+                _model.CorrectAnswers += 1;
+                // Correct
+            }
+            else
+            {
+                Debug.Log("Wrong");
+                // Wrong
+            }
+
+            _model.CurrentPacket = null;
+
+            // Animate going in
+        }
+        
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (!_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+            {
+                _model.CorrectAnswers += 1;
+                Debug.Log("Correct");
+                // Correct
+            }
+            else
+            {
+                Debug.Log("Wrong");
+                // Wrong
+            }
+            
+            _model.CurrentPacket = null;
+            
+            // Animate going out
+        }
+        
+        RateFillBar.fillAmount = _model.CorrectAnswerRate;
     }
 
     public void HandleRouterChanged(SubnetAddress newAddress)
     {
+        if (newAddress == null)
+        {
+            CurrentRouterText.text = "";
+            return;
+        }
         CurrentRouterText.text = newAddress.Address.ToString();
     }
     
     public void HandleCurrentPacketChanged(SubnetAddress newAddress)
     {
+        if (newAddress == null)
+        {
+            CurrentPacketText.text = "";
+            return;
+        }
         CurrentPacketText.text = newAddress.Address.ToString();
     }
 
