@@ -18,7 +18,7 @@ public static class RectTransformExtensions
         }
 
         // Kill existing scale tweens to prevent stacking
-        rectTransform.DOKill();
+        rectTransform.DOKill(complete:true);
 
         Vector3 punchVector = Vector3.one * punchScale;
 
@@ -47,7 +47,7 @@ public static class RectTransformExtensions
         }
 
         // Kill any existing shake on this rect to avoid stacking
-        rectTransform.DOKill();
+        rectTransform.DOKill(complete:true);
 
         return rectTransform.DOShakeAnchorPos(
             duration: duration,
@@ -75,10 +75,17 @@ public static class RectTransformExtensions
 
         var copy = GameObject.Instantiate(rectTransform.gameObject, rectTransform.parent);
         var copyRectTransform = copy.GetComponent<RectTransform>();
-        
-        return copyRectTransform.DOMove(target.position,
-            duration:3f,
-            snapping:false)
+
+        var tween = copyRectTransform.DOMove(target.position,
+                duration: 3f,
+                snapping: false)
             .SetEase(Ease.OutCubic);
+
+        tween.onComplete += () =>
+        {
+            GameObject.Destroy(copyRectTransform.gameObject);
+        };
+        
+        return tween;
     }
 }
