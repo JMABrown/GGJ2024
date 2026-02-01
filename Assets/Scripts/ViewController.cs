@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class ViewController : MonoBehaviour
 {
@@ -18,6 +20,18 @@ public class ViewController : MonoBehaviour
     public CrazyWiggle ComboWiggle;
     public GameObject ComboContainer;
     public TextMeshProUGUI ComboText;
+    public TextMeshProUGUI RemainingText;
+
+    private const float TIME_PER_ROUND = 15f;
+    public CrazyWiggle TimerWiggle;
+
+    public bool GameOver = false;
+
+    public GameObject GameOverContainer;
+    public TextMeshProUGUI FinalScoreText;
+    public TextMeshProUGUI FinalAccuracyText;
+    public TextMeshProUGUI FinalCorrectPacketsText;
+    public TextMeshProUGUI FinalSurvivalTimeText;
     
     void Start()
     {
@@ -25,6 +39,8 @@ public class ViewController : MonoBehaviour
         _model.OnCurrentPacketChanged += HandleCurrentPacketChanged;
         _model.OnNextPacketsChanged += HandleNextPacketsChanged;
         _model.OnComboChanged += HandleComboChanged;
+        _model.OnCorrectAnswersChanged += HandleCorrectAnswer;
+        _model.OnNumAnswersNeededChanged += HandleNumAnswersNeededChanged;
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
@@ -67,65 +83,108 @@ public class ViewController : MonoBehaviour
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         //Model.NextPackets.Enqueue(AddressGenerator.ge);
+        ResetRoundAndTimer();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameOver)
+        {
+            return;
+        }
+        
         if (_model.CurrentPacket == null && _model.NextPackets.Count > 0)
         {
             _model.CurrentPacket = _model.NextPackets.Dequeue();
         }
         
-        //block input
-        if (_model.CurrentPacket == null)
-        {
-            return;
-        }
-
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+            if (_model.CurrentPacket != null)
             {
-                Debug.Log("Correct");
-                _model.CorrectAnswers += 1;
-                _model.Combo += 1;
-                // Correct
-            }
-            else
-            {
-                Debug.Log("Wrong");
-                _model.Combo = 0;
-                // Wrong
-            }
+                if (_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    WrongAnswer();
+                }
 
-            _model.CurrentPacket = null;
-
-            // Animate going in
+                // Animate going in
+                _model.CurrentPacket = null;
+            }
         }
         
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (!_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+            if (_model.CurrentPacket != null)
             {
-                _model.CorrectAnswers += 1;
-                _model.Combo += 1;
-                Debug.Log("Correct");
-                // Correct
+                if (!_model.CurrentPacket.IsSameSubnet(_model.RouterAddress))
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    WrongAnswer();
+                }
+                
+                // Animate going out
+                _model.CurrentPacket = null;
             }
-            else
-            {
-                _model.Combo = 0;
-                Debug.Log("Wrong");
-                // Wrong
-            }
-            
-            _model.CurrentPacket = null;
-            
-            // Animate going out
         }
+
+        var timeLeftRatio = _model.TimeRemaining / TIME_PER_ROUND;
+        RateFillBar.fillAmount = timeLeftRatio;
+        if (timeLeftRatio < 0.33f && timeLeftRatio > 0f)
+        {
+            TimerWiggle.Max = 1f / timeLeftRatio;
+            TimerWiggle.Min = -1f / timeLeftRatio;
+        }
+        else
+        {
+            TimerWiggle.Min = 0f;
+            TimerWiggle.Max = 0f;
+        }
+
+        if (_model.TimeRemaining <= 0f)
+        {
+            TriggerGameOver();
+        }
+    }
+
+    public void TriggerGameOver()
+    {
+        GameOver = true;
         
-        RateFillBar.fillAmount = _model.CorrectAnswerRate;
+        FinalScoreText.text = $"Your Score: {_model.Score}";
+        if (_model.NumAllAnswersGiven == 0)
+        {
+            FinalAccuracyText.text = $"Accuracy: 0%";
+        }
+        else
+        {
+            FinalAccuracyText.text = $"Accuracy: {_model.CorrectAnswers / _model.NumAllAnswersGiven}";
+        }
+        FinalCorrectPacketsText.text = $"Correct Packets: {_model.CorrectAnswers}";
+        FinalSurvivalTimeText.text = $"You Survived For: {(int)Time.time}s";
+
+        GameOverContainer.SetActive(true);
+    }
+
+    public void CorrectAnswer()
+    {
+        _model.NumAnswersNeeded += 1;
+        _model.CorrectAnswers += 1;
+        _model.Combo += 1;
+        _model.Score += _model.Combo;
+    }
+
+    public void WrongAnswer()
+    {
+        _model.NumAllAnswersGiven += 1;
+        _model.Combo = 0;
     }
 
     public void HandleRouterChanged(SubnetAddress newAddress)
@@ -183,5 +242,32 @@ public class ViewController : MonoBehaviour
                 ComboWiggle.Min = -newCombo;
             }
         }
+    }
+
+    public void HandleCorrectAnswer(int numCorrect)
+    {
+        _model.NumAnswersNeeded--;
+        
+        if (_model.NumAnswersNeeded <= 0)
+        {
+            ResetRoundAndTimer();
+        }
+    }
+
+    public void ResetRoundAndTimer()
+    {
+        if (_model.TimeRemaining > 0)
+        {
+            _model.Score += (int)_model.TimeRemaining * (int)_model.TimeRemaining;
+        }
+
+        _model.Round++;
+        _model.NumAnswersNeeded = (int)(2f * Math.Pow(1.2f, _model.Round));
+        _model.TimeIsUp = Time.time + TIME_PER_ROUND;
+    }
+
+    public void HandleNumAnswersNeededChanged(int numNeeded)
+    {
+        RemainingText.text = $"NEED CORRECT: {_model.NumAnswersNeeded}";
     }
 }

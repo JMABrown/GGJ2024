@@ -10,6 +10,9 @@ public class ViewModel
     public event Action<SubnetAddress> OnCurrentPacketChanged;
     public event Action<SubnetAddress> OnRouterAddressChanged;
     public event Action<int> OnCorrectAnswersChanged;
+    public event Action<int> OnNumAnswersNeededChanged;
+    public event Action<int> OnScoreChanged;
+    public event Action<float> OnTimeIsUpChanged;
     public event Action<int> OnComboChanged;
 
     public int CorrectAnswers
@@ -24,7 +27,56 @@ public class ViewModel
             return _correctAnswers;
         }
     }
-    private int _correctAnswers;
+    private int _correctAnswers = 0;
+
+    public int NumAllAnswersGiven { get; set; } = 0;
+    
+    public int NumAnswersNeeded
+    {
+        set
+        {
+            _numAnswersNeeded = value;
+            OnNumAnswersNeededChanged?.Invoke(_numAnswersNeeded);
+        }
+        get
+        {
+            return _numAnswersNeeded;
+        }
+    }
+    private int _numAnswersNeeded;
+    
+    public int Round { set; get; } = 0;
+
+    public int Score
+    {
+        set
+        {
+            _score = value;
+            OnScoreChanged?.Invoke(_score);
+        }
+        get
+        {
+            return _score;
+        }
+    }
+    private int _score;
+
+    public float TimeRemaining => TimeIsUp - Time.time;
+    
+    public float TimeIsUp
+    {
+        set
+        {
+            _timeIsUp = value;
+            OnTimeIsUpChanged?.Invoke(_timeIsUp);
+        }
+        get
+        {
+            return _timeIsUp;
+        }
+    }
+    private float _timeIsUp;
+    
     public int Combo
     {
         set
@@ -46,9 +98,15 @@ public class ViewModel
             {
                 return 0;
             }
-            return CorrectAnswers / Time.time;
+            var rate = CorrectAnswers / Time.time;
+            _maxCorrectAnswerRate = Mathf.Max(_maxCorrectAnswerRate, rate);
+            return rate;
         }
     }
+
+    private float _maxCorrectAnswerRate;
+
+    public float MaxCorrectAnswerRate => _maxCorrectAnswerRate;
 
     public float MinimumAnswerRate;
 
