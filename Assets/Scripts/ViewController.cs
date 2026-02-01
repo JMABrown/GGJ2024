@@ -239,7 +239,8 @@ public class ViewController : MonoBehaviour
     {
         ScoreText.text = $"Score: {newScore}";
 
-        ScoreText.rectTransform.Punch(punchScale: (float)delta / 100f);
+        var punchStrength = Mathf.Max(0.1f, delta / 100f);
+        ScoreText.rectTransform.Punch(punchScale: punchStrength);
     }
 
     public void HandleAnswerGiven(int answersGiven)
@@ -258,7 +259,7 @@ public class ViewController : MonoBehaviour
     {
         if (_model.TimeRemaining > 0)
         {
-            _model.Score += (int)_model.TimeRemaining * (int)_model.TimeRemaining;
+            _model.Score += (int)(_model.TimeRemaining * (_model.Round * _model.Round * 0.33f));
         }
 
         _model.Round++;
