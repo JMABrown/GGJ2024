@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Xml;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
@@ -36,6 +36,10 @@ public class ViewController : MonoBehaviour
 
     public RectTransform LeftArrowImageRoot;
     public RectTransform RightArrowImageRoot;
+
+    public RectTransform TimerContainer;
+
+    public TextMeshProUGUI ScoreText;
     
     void Start()
     {
@@ -46,6 +50,7 @@ public class ViewController : MonoBehaviour
         _model.OnCorrectAnswersChanged += HandleCorrectAnswer;
         _model.OnAnswerGiven += HandleAnswerGiven;
         _model.OnNumAnswersNeededChanged += HandleNumAnswersNeededChanged;
+        _model.OnScoreChanged += HandleScoreChanged;
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
@@ -156,8 +161,11 @@ public class ViewController : MonoBehaviour
 
     public void WrongAnswer()
     {
+        _model.TimeIsUp -= 1f;
         _model.NumAllAnswersGiven += 1;
         _model.Combo = 0;
+
+        TimerContainer.Shake();
     }
 
     public void HandleRouterChanged(SubnetAddress newAddress)
@@ -225,6 +233,13 @@ public class ViewController : MonoBehaviour
         {
             ResetRoundAndTimer();
         }
+    }
+
+    public void HandleScoreChanged(int newScore, int delta)
+    {
+        ScoreText.text = $"Score: {newScore}";
+
+        ScoreText.rectTransform.Punch(punchScale: (float)delta / 100f);
     }
 
     public void HandleAnswerGiven(int answersGiven)

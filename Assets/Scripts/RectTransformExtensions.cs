@@ -29,4 +29,33 @@ public static class RectTransformExtensions
             elasticity: elasticity
         );
     }
+    
+    public static Tween Shake(
+        this RectTransform rectTransform,
+        float duration = 0.3f,
+        float strength = 20f,
+        int vibrato = 20,
+        float randomness = 90f,
+        bool fadeOut = true,
+        bool snapping = false
+    )
+    {
+        if (rectTransform == null)
+        {
+            Debug.LogWarning("Attempted to shake a null RectTransform.");
+            return null;
+        }
+
+        // Kill any existing shake on this rect to avoid stacking
+        rectTransform.DOKill();
+
+        return rectTransform.DOShakeAnchorPos(
+            duration: duration,
+            strength: strength,
+            vibrato: vibrato,
+            randomness: randomness,
+            snapping: snapping,
+            fadeOut: fadeOut
+        );
+    }
 }

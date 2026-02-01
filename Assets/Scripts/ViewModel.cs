@@ -12,7 +12,7 @@ public class ViewModel
     public event Action<int> OnCorrectAnswersChanged;
     public event Action<int> OnAnswerGiven;
     public event Action<int> OnNumAnswersNeededChanged;
-    public event Action<int> OnScoreChanged;
+    public event Action<int, int> OnScoreChanged;
     public event Action<float> OnTimeIsUpChanged;
     public event Action<int> OnComboChanged;
 
@@ -61,8 +61,9 @@ public class ViewModel
     {
         set
         {
+            var delta = value - _score;
             _score = value;
-            OnScoreChanged?.Invoke(_score);
+            OnScoreChanged?.Invoke(_score, delta);
         }
         get
         {
