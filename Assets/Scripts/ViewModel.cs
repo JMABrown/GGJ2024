@@ -10,6 +10,7 @@ public class ViewModel
     public event Action<SubnetAddress> OnCurrentPacketChanged;
     public event Action<SubnetAddress> OnRouterAddressChanged;
     public event Action<int> OnCorrectAnswersChanged;
+    public event Action<int> OnAnswerGiven;
     public event Action<int> OnNumAnswersNeededChanged;
     public event Action<int> OnScoreChanged;
     public event Action<float> OnTimeIsUpChanged;
@@ -29,8 +30,17 @@ public class ViewModel
     }
     private int _correctAnswers = 0;
 
-    public int NumAllAnswersGiven { get; set; } = 0;
-    
+    public int NumAllAnswersGiven
+    {
+        set
+        {
+            _allAnswersGiven = value;
+            OnAnswerGiven?.Invoke(_allAnswersGiven);
+        }
+        get { return _allAnswersGiven; }
+    }
+    private int _allAnswersGiven = 0;
+
     public int NumAnswersNeeded
     {
         set

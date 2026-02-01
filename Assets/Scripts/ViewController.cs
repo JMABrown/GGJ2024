@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using Random = UnityEngine.Random;
 
 public class ViewController : MonoBehaviour
 {
@@ -40,27 +41,21 @@ public class ViewController : MonoBehaviour
         _model.OnNextPacketsChanged += HandleNextPacketsChanged;
         _model.OnComboChanged += HandleComboChanged;
         _model.OnCorrectAnswersChanged += HandleCorrectAnswer;
+        _model.OnAnswerGiven += HandleAnswerGiven;
         _model.OnNumAnswersNeededChanged += HandleNumAnswersNeededChanged;
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
@@ -73,9 +68,6 @@ public class ViewController : MonoBehaviour
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
-        _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
@@ -175,7 +167,7 @@ public class ViewController : MonoBehaviour
 
     public void CorrectAnswer()
     {
-        _model.NumAnswersNeeded += 1;
+        _model.NumAllAnswersGiven += 1;
         _model.CorrectAnswers += 1;
         _model.Combo += 1;
         _model.Score += _model.Combo;
@@ -251,6 +243,18 @@ public class ViewController : MonoBehaviour
         if (_model.NumAnswersNeeded <= 0)
         {
             ResetRoundAndTimer();
+        }
+    }
+
+    public void HandleAnswerGiven(int answersGiven)
+    {
+        if (Random.value < 0.6)
+        {
+            _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
+        }
+        else
+        {
+            _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         }
     }
 
