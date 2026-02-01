@@ -28,6 +28,8 @@ public class EventfulQueue<T>
         return _queue.ToArray().ToList();
     }
 
+
     public T Peek() => _queue.Peek();
     public int Count => _queue.Count;
+    public void Clear() => _queue.Clear();
 }

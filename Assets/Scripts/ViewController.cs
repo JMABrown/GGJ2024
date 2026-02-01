@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -47,6 +48,8 @@ public class ViewController : MonoBehaviour
     public RectTransform CurrentPacketRectTransform;
 
     public GameObject TutorialRoot;
+
+    [FormerlySerializedAs("StartTime")] public float MatchStartTime = 0;
     
     void Start()
     {
@@ -58,14 +61,33 @@ public class ViewController : MonoBehaviour
         _model.OnAnswerGiven += HandleAnswerGiven;
         _model.OnNumAnswersNeededChanged += HandleNumAnswersNeededChanged;
         _model.OnScoreChanged += HandleScoreChanged;
+        RestartModel();
+    }
+
+    public void RestartModel()
+    {
         _model.RouterAddress = AddressGenerator.GenerateSubnetAddress(AddressGenerator.Rfc1918AddressSpace.Slash16);
+        if (_model.NextPackets.Count > 0)
+        {
+            _model.NextPackets.Clear();
+        }
+
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressWithinSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
-        //Model.NextPackets.Enqueue(AddressGenerator.ge);
+        
+        _model.Combo = 0;
+        _model.CorrectAnswers = 0;
+        _model.Round = 0;
+        _model.Score = 0;
+        _model.NumAnswersNeeded = 0;
+        _model.NumAllAnswersGiven = 0;
+        
+        GameOverContainer.SetActive(false);
+        GameOver = false;
     }
 
     // Update is called once per frame
@@ -73,6 +95,12 @@ public class ViewController : MonoBehaviour
     {
         if (GameOver)
         {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                RestartModel();
+                ResetRoundAndTimer();
+                MatchStartTime = Time.time;
+            }
             return;
         }
 
@@ -83,6 +111,7 @@ public class ViewController : MonoBehaviour
                 ShowingTutorial = false;
                 TutorialRoot.gameObject.SetActive(false);
                 ResetRoundAndTimer();
+                MatchStartTime = Time.time;
             }
             return;
         }
@@ -165,7 +194,7 @@ public class ViewController : MonoBehaviour
             FinalAccuracyText.text = $"Accuracy: {(int)((float)_model.CorrectAnswers / _model.NumAllAnswersGiven * 100f)}%";
         }
         FinalCorrectPacketsText.text = $"Correct Packets: {_model.CorrectAnswers}";
-        FinalSurvivalTimeText.text = $"You Survived For: {(int)Time.time}s";
+        FinalSurvivalTimeText.text = $"You Survived For: {(int)(Time.time - MatchStartTime)}s";
 
         GameOverContainer.SetActive(true);
     }

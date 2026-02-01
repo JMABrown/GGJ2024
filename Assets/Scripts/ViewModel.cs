@@ -20,8 +20,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _correctAnswers != value;
             _correctAnswers = value;
-            OnCorrectAnswersChanged?.Invoke(_correctAnswers);
+            if (changed) { OnCorrectAnswersChanged?.Invoke(_correctAnswers); }
         }
         get
         {
@@ -34,8 +35,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _allAnswersGiven != value;
             _allAnswersGiven = value;
-            OnAnswerGiven?.Invoke(_allAnswersGiven);
+            if (changed) { OnAnswerGiven?.Invoke(_allAnswersGiven); }
         }
         get { return _allAnswersGiven; }
     }
@@ -45,8 +47,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _numAnswersNeeded != value;
             _numAnswersNeeded = value;
-            OnNumAnswersNeededChanged?.Invoke(_numAnswersNeeded);
+             if (changed) { OnNumAnswersNeededChanged?.Invoke(_numAnswersNeeded); }
         }
         get
         {
@@ -63,7 +66,7 @@ public class ViewModel
         {
             var delta = value - _score;
             _score = value;
-            OnScoreChanged?.Invoke(_score, delta);
+            if (delta > 0) { OnScoreChanged?.Invoke(_score, delta); }
         }
         get
         {
@@ -78,8 +81,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _timeIsUp != value;
             _timeIsUp = value;
-            OnTimeIsUpChanged?.Invoke(_timeIsUp);
+            if (changed) { OnTimeIsUpChanged?.Invoke(_timeIsUp); }
         }
         get
         {
@@ -92,8 +96,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _combo != value;
             _combo = value;
-            OnComboChanged?.Invoke(_combo);
+             if (changed) {OnComboChanged?.Invoke(_combo);}
         }
         get
         {
@@ -125,8 +130,9 @@ public class ViewModel
     {
         set
         {
+            var changed = _currentPacket != value;
             _currentPacket = value;
-            OnCurrentPacketChanged?.Invoke(_currentPacket);
+            if (changed) {OnCurrentPacketChanged?.Invoke(_currentPacket);}
         }
         get
         {
@@ -139,8 +145,17 @@ public class ViewModel
     {
         set
         {
+            bool changed;
+            if (_routerAddress == null)
+            {
+                changed = value != null;
+            }
+            else
+            {
+                changed = _routerAddress.Equals(value);
+            }
             _routerAddress = value;
-            OnRouterAddressChanged?.Invoke(_routerAddress);
+            if (changed) { OnRouterAddressChanged?.Invoke(_routerAddress); }
         }
         get
         {
