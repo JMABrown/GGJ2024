@@ -58,4 +58,27 @@ public static class RectTransformExtensions
             fadeOut: fadeOut
         );
     }
+    
+    public static Tween YeetCopy(
+        this RectTransform rectTransform,
+        RectTransform target
+    )
+    {
+        if (rectTransform == null)
+        {
+            Debug.LogWarning("Attempted to shake a null RectTransform.");
+            return null;
+        }
+        
+        // Kill any existing shake on this rect to avoid stacking
+        rectTransform.DOKill();
+
+        var copy = GameObject.Instantiate(rectTransform.gameObject, rectTransform.parent);
+        var copyRectTransform = copy.GetComponent<RectTransform>();
+        
+        return copyRectTransform.DOMove(target.position,
+            duration:3f,
+            snapping:false)
+            .SetEase(Ease.OutCubic);
+    }
 }

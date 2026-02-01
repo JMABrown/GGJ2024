@@ -40,6 +40,10 @@ public class ViewController : MonoBehaviour
     public RectTransform TimerContainer;
 
     public TextMeshProUGUI ScoreText;
+
+    public RectTransform OffscreenFarLeft;
+    public RectTransform OffscreenFarRight;
+    public RectTransform CurrentPacketRectTransform;
     
     void Start()
     {
@@ -89,6 +93,7 @@ public class ViewController : MonoBehaviour
                 }
 
                 // Animate going in
+                CurrentPacketRectTransform.YeetCopy(OffscreenFarLeft);
                 LeftArrowImageRoot.Punch();
                 _model.CurrentPacket = null;
             }
@@ -108,6 +113,7 @@ public class ViewController : MonoBehaviour
                 }
                 
                 // Animate going out
+                CurrentPacketRectTransform.YeetCopy(OffscreenFarRight);
                 RightArrowImageRoot.Punch();
                 _model.CurrentPacket = null;
             }
