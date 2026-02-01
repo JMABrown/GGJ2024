@@ -27,6 +27,7 @@ public class ViewController : MonoBehaviour
     public CrazyWiggle TimerWiggle;
 
     public bool GameOver = false;
+    public bool ShowingTutorial = true;
 
     public GameObject GameOverContainer;
     public TextMeshProUGUI FinalScoreText;
@@ -44,6 +45,8 @@ public class ViewController : MonoBehaviour
     public RectTransform OffscreenFarLeft;
     public RectTransform OffscreenFarRight;
     public RectTransform CurrentPacketRectTransform;
+
+    public GameObject TutorialRoot;
     
     void Start()
     {
@@ -63,7 +66,6 @@ public class ViewController : MonoBehaviour
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         _model.NextPackets.Enqueue(AddressGenerator.GenerateSubnetAddressOutsideSubnet(_model.RouterAddress));
         //Model.NextPackets.Enqueue(AddressGenerator.ge);
-        ResetRoundAndTimer();
     }
 
     // Update is called once per frame
@@ -73,7 +75,18 @@ public class ViewController : MonoBehaviour
         {
             return;
         }
-        
+
+        if (ShowingTutorial)
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                ShowingTutorial = false;
+                TutorialRoot.gameObject.SetActive(false);
+                ResetRoundAndTimer();
+            }
+            return;
+        }
+            
         if (_model.CurrentPacket == null && _model.NextPackets.Count > 0)
         {
             _model.CurrentPacket = _model.NextPackets.Dequeue();
