@@ -1,4 +1,5 @@
-﻿using Unity.FPS.Game;
+﻿using TMPro;
+using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -29,6 +30,12 @@ namespace Unity.FPS.UI
 
         [Tooltip("GameObject for the controls")]
         public GameObject ControlImage;
+
+        public TMP_InputField CardNumberInput;
+        public TMP_InputField ExpireyDateInput;
+        public TMP_InputField CardholderNameInput;
+        public TMP_InputField SortCodeInput;
+        [SerializeField] public Button PurchaseButton;
 
         PlayerInputHandler m_PlayerInputsHandler;
         Health m_PlayerHealth;
@@ -74,6 +81,13 @@ namespace Unity.FPS.UI
             m_CancelAction.Enable();
             m_NavigateAction.Enable();
             m_MenuAction.Enable();
+            
+            PurchaseButton.onClick.AddListener(PurchaseButtonOnclicked);
+        }
+
+        private void PurchaseButtonOnclicked()
+        {
+            Debug.Log(CardNumberInput.text);
         }
 
         void Update()
@@ -127,7 +141,6 @@ namespace Unity.FPS.UI
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                Time.timeScale = 0f;
                 AudioUtility.SetMasterVolume(VolumeWhenMenuOpen);
 
                 EventSystem.current.SetSelectedGameObject(null);
@@ -136,7 +149,6 @@ namespace Unity.FPS.UI
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Time.timeScale = 1f;
                 AudioUtility.SetMasterVolume(1);
             }
 
