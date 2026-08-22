@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -1191,7 +1192,7 @@
                 {
                     "name": "",
                     "id": "cc8ad203-ec51-470d-8a61-8c00846409d2",
-                    "path": "<Keyboard>/p",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Gamepad",
@@ -1225,6 +1226,17 @@
                     "name": "",
                     "id": "e920dfa9-f4a4-4db2-8498-d573d876ee88",
                     "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59ca84b4-8c3e-42b6-a621-cc3b1f824c15",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
