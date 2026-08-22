@@ -6,27 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="170949ce-47a7-45c7-ace8-d44e8637718c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/fps.AI.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/fps.AI.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Editor/fps.Editor.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Editor/fps.Editor.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/fps.Game.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/fps.Game.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/fps.Gameplay.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/fps.Gameplay.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Blaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Blaster.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/fps.UI.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/fps.UI.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/Unity.Microgame.Tutorials.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/Unity.Microgame.Tutorials.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Unity.FPS.Tutorials.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Unity.FPS.Tutorials.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +111,7 @@
       <updated>1769863386297</updated>
       <workItem from="1769863389102" duration="39307000" />
       <workItem from="1787405494982" duration="5035000" />
-      <workItem from="1787412906764" duration="3513000" />
+      <workItem from="1787412906764" duration="7212000" />
     </task>
     <servers />
   </component>

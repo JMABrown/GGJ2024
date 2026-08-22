@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Text.RegularExpressions;
 using TMPro;
 using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
@@ -7,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class InGameMenuManager : MonoBehaviour
 {
@@ -32,9 +35,12 @@ public class InGameMenuManager : MonoBehaviour
     public GameObject ControlImage;
 
     public TMP_InputField CardNumberInput;
-    public TMP_InputField ExpireyDateInput;
+    public TMP_InputField ExpireyDateInputMonth;
+    public TMP_InputField ExpireyDateInputYear;
     public TMP_InputField CardholderNameInput;
-    public TMP_InputField SortCodeInput;
+    public TMP_InputField SortCodeInput1;
+    public TMP_InputField SortCodeInput2;
+    public TMP_InputField SortCodeInput3;
     [SerializeField] public Button PurchaseButton;
 
     PlayerInputHandler m_PlayerInputsHandler;
@@ -87,10 +93,98 @@ public class InGameMenuManager : MonoBehaviour
         PurchaseButton.onClick.AddListener(PurchaseButtonOnclicked);
     }
 
+    private Coroutine _paymentCoroutine;
+    
     private void PurchaseButtonOnclicked()
     {
-        Debug.Log(CardNumberInput.text);
-        OnPaymentSuccessful?.Invoke();
+        _paymentCoroutine = StartCoroutine(PaymentProcess());
+    }
+
+    private bool IsRunningPaymentProcess = false;
+    private string ErrorMessage = "";
+    private bool PaymentSuccessful = false;
+    private IEnumerator PaymentProcess()
+    {
+        if (IsRunningPaymentProcess)
+        {
+            yield break;
+        }
+        IsRunningPaymentProcess = true;
+
+        yield return new WaitForSeconds(Random.Range(0.8f, 3.6f));
+
+        yield return CheckPaymentDetails();
+
+        if (PaymentSuccessful)
+        {
+            OnPaymentSuccessful?.Invoke();
+        }
+
+        IsRunningPaymentProcess = false;
+    }
+
+    private IEnumerator CheckPaymentDetails()
+    {
+        Regex twoDigits = new Regex("^[0-9]{2}$");
+        Regex oneDigit = new Regex("^[0-9]{1}$");
+        
+        PaymentSuccessful = false;
+        ErrorMessage = "";
+        if (!CardNumberInput.text.Equals("5355221628550578"))
+        {
+            if (CardNumberInput.text.Contains(' ') || CardNumberInput.text.Contains('-'))
+            {
+                ErrorMessage = "Account number in wrong format. No spaces or dashes!";
+                yield break;
+            }
+            ErrorMessage = "Details incorrect";
+            yield break;
+        }
+
+        if (!ExpireyDateInputMonth.text.Equals("12"))
+        {
+            if (!twoDigits.IsMatch(ExpireyDateInputMonth.text))
+            {
+                ErrorMessage = "Expirey date month must be two digits";
+                yield break;
+            }
+            ErrorMessage = "Details incorrect";
+            yield break;
+        }
+        
+        if (!ExpireyDateInputYear.text.Equals("29"))
+        {
+            if (!twoDigits.IsMatch(ExpireyDateInputYear.text))
+            {
+                ErrorMessage = "Expirey date year must be two digits";
+                yield break;
+            }
+            ErrorMessage = "Details incorrect";
+            yield break;
+        }
+
+        if (!CardholderNameInput.text.Equals("JAMES BROWN"))
+        {
+            ErrorMessage = "Details incorrect";
+            yield break;
+        }
+
+        if (SortCodeInput1.text != "1"
+            || SortCodeInput2.text != "6"
+            || SortCodeInput3.text != "2")
+        {
+            if (!oneDigit.IsMatch(SortCodeInput1.text)
+                || !oneDigit.IsMatch(SortCodeInput2.text)
+                || !oneDigit.IsMatch(SortCodeInput3.text))
+            {
+                ErrorMessage = "Security code must be 3 digits";
+                yield break;
+            }
+            ErrorMessage = "Details incorrect";
+            yield break;
+        }
+
+        PaymentSuccessful = true;
     }
 
     void Update()

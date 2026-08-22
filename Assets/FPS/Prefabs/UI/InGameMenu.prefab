@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 7601399922948690078}
   - component: {fileID: 8804419861327088221}
   m_Layer: 5
-  m_Name: InputField (TMP) (2)
+  m_Name: SecurityDigit3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2682,7 +2682,7 @@ GameObject:
   - component: {fileID: 7260430467257117337}
   - component: {fileID: 124683243615916419}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: ExpireyMM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3745,7 +3745,7 @@ GameObject:
   - component: {fileID: 9200036355720813435}
   - component: {fileID: 1898976439597521775}
   m_Layer: 5
-  m_Name: InputField (TMP) (1)
+  m_Name: ExpireyYY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4519,7 +4519,7 @@ GameObject:
   - component: {fileID: 7045960194269452377}
   - component: {fileID: 800152925321924968}
   m_Layer: 5
-  m_Name: Security Number (1)
+  m_Name: BuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6301,7 +6301,7 @@ GameObject:
   - component: {fileID: 7258762033489883981}
   - component: {fileID: 7041096091406276259}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: SecurityDigit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6692,7 +6692,7 @@ GameObject:
   - component: {fileID: 5121001085657845858}
   - component: {fileID: 8384749967526415599}
   m_Layer: 5
-  m_Name: InputField (TMP) (1)
+  m_Name: SecurityDigit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8150,6 +8150,12 @@ MonoBehaviour:
   FramerateToggle: {fileID: 1296915883990735889}
   ControlImage: {fileID: 5500535886939863649}
   CardNumberInput: {fileID: 1729982504021893703}
+  ExpireyDateInputMonth: {fileID: 124683243615916419}
+  ExpireyDateInputYear: {fileID: 1898976439597521775}
+  CardholderNameInput: {fileID: 5232672382621845479}
+  SortCodeInput1: {fileID: 7041096091406276259}
+  SortCodeInput2: {fileID: 8384749967526415599}
+  SortCodeInput3: {fileID: 8804419861327088221}
   PurchaseButton: {fileID: 9178340839083618947}
 --- !u!114 &7296051738793191102
 MonoBehaviour:
