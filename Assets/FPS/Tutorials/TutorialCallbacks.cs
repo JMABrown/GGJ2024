@@ -3,6 +3,7 @@ using Unity.Tutorials.Core.Editor;
 using UnityEditor;
 using UnityEngine.AI;
 using Unity.AI.Navigation;
+using NavMeshSurface = Unity.AI.Navigation.NavMeshSurface;
 
 namespace Unity.Tutorials
 {
