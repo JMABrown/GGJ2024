@@ -159,6 +159,8 @@ namespace Unity.FPS.Game
 
         public bool IsReloading { get; private set; }
 
+        public bool IsDoneReloading = false;
+
         const string k_AnimAttackParameter = "Attack";
 
         private Queue<Rigidbody> m_PhysicalAmmoPool;
@@ -187,11 +189,14 @@ namespace Unity.FPS.Game
             {
                 m_PhysicalAmmoPool = new Queue<Rigidbody>(ShellPoolSize);
 
-                for (int i = 0; i < ShellPoolSize; i++)
+                if (ShellCasing != null)
                 {
-                    GameObject shell = Instantiate(ShellCasing, transform);
-                    shell.SetActive(false);
-                    m_PhysicalAmmoPool.Enqueue(shell.GetComponent<Rigidbody>());
+                    for (int i = 0; i < ShellPoolSize; i++)
+                    {
+                        GameObject shell = Instantiate(ShellCasing, transform);
+                        shell.SetActive(false);
+                        m_PhysicalAmmoPool.Enqueue(shell.GetComponent<Rigidbody>());
+                    }
                 }
             }
         }
@@ -200,6 +205,11 @@ namespace Unity.FPS.Game
 
         void ShootShell()
         {
+            if (ShellCasing == null)
+            {
+                return;
+            }
+            
             Rigidbody nextShell = m_PhysicalAmmoPool.Dequeue();
 
             nextShell.transform.position = EjectionPort.transform.position;
@@ -215,7 +225,7 @@ namespace Unity.FPS.Game
         void PlaySFX(AudioClip sfx) => AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
 
 
-        void Reload()
+        public void Reload()
         {
             if (m_CarriedPhysicalBullets > 0)
             {
@@ -223,6 +233,7 @@ namespace Unity.FPS.Game
             }
 
             IsReloading = false;
+            IsDoneReloading = false;
         }
 
         public void StartReloadAnimation()
@@ -249,6 +260,11 @@ namespace Unity.FPS.Game
 
         void UpdateAmmo()
         {
+            if (IsDoneReloading)
+            {
+                Reload();
+            }
+            
             if (AutomaticReload && m_LastTimeShot + AmmoReloadDelay < Time.time && m_CurrentAmmo < MaxAmmo && !IsCharging)
             {
                 // reloads weapon over time
