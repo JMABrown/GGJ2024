@@ -1334,7 +1334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5c21576cee7974fa44b4f13c685f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateSlowly
-  AngleRotateBy: 0.5
+  AngleRotateBy: 1
+  VectorToRotateIn: {x: 0, y: 1, z: 0}
 --- !u!4 &1758044503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1315839542190839937, guid: c996b53e9f849234393d1e90f68d1679,

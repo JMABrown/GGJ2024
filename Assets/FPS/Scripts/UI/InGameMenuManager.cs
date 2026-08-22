@@ -52,6 +52,8 @@ public class InGameMenuManager : MonoBehaviour
     private InputAction m_NavigateAction;
     private InputAction m_MenuAction;
 
+    public RectTransform LoadingSpinner;
+
     public static event Action OnPaymentSuccessful;
 
     void Start()
@@ -111,6 +113,11 @@ public class InGameMenuManager : MonoBehaviour
         }
         IsRunningPaymentProcess = true;
 
+        if (LoadingSpinner)
+        {
+            LoadingSpinner.gameObject.SetActive(true);
+        }
+
         yield return new WaitForSeconds(Random.Range(0.8f, 3.6f));
 
         yield return CheckPaymentDetails();
@@ -127,6 +134,11 @@ public class InGameMenuManager : MonoBehaviour
         SortCodeInput1.text = "";
         SortCodeInput2.text = "";
         SortCodeInput3.text = "";
+        
+        if (LoadingSpinner)
+        {
+            LoadingSpinner.gameObject.SetActive(false);
+        }
 
         IsRunningPaymentProcess = false;
     }
