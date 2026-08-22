@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="170949ce-47a7-45c7-ace8-d44e8637718c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Blaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Blaster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/AmmoCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/AmmoCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +87,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10728">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10728" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -113,7 +113,7 @@
       <updated>1769863386297</updated>
       <workItem from="1769863389102" duration="39307000" />
       <workItem from="1787405494982" duration="5035000" />
-      <workItem from="1787412906764" duration="9527000" />
+      <workItem from="1787412906764" duration="11231000" />
     </task>
     <servers />
   </component>
@@ -138,6 +138,32 @@
           <line>120</line>
           <properties documentPath="D:\Github-work\GGJ2024\Assets\Scripts\ViewController.cs" containingFunctionPresentation="Method 'Update'" />
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs</url>
+          <line>229</line>
+          <properties documentPath="D:\Github-work\GGJ2024\Assets\FPS\Scripts\Game\Shared\WeaponController.cs" containingFunctionPresentation="Method 'Reload'">
+            <startOffsets>
+              <option value="8813" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8846" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs</url>
+          <line>240</line>
+          <properties documentPath="D:\Github-work\GGJ2024\Assets\FPS\Scripts\Game\Shared\WeaponController.cs" containingFunctionPresentation="Method 'StartReloadAnimation'">
+            <startOffsets>
+              <option value="9110" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9148" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

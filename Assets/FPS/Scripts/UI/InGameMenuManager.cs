@@ -120,6 +120,14 @@ public class InGameMenuManager : MonoBehaviour
             OnPaymentSuccessful?.Invoke();
         }
 
+        CardNumberInput.text = "";
+        ExpireyDateInputMonth.text = "";
+        ExpireyDateInputYear.text = "";
+        CardholderNameInput.text = "";
+        SortCodeInput1.text = "";
+        SortCodeInput2.text = "";
+        SortCodeInput3.text = "";
+
         IsRunningPaymentProcess = false;
     }
 
