@@ -151,16 +151,16 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.05
   response:
     m_OverrideState: 1
     m_Value: 0.8
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 13ad0e4a5e6f824468ab91f946e7f8d4, type: 3}
 --- !u!114 &7827985127269028407
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 1
   clamp:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.2
