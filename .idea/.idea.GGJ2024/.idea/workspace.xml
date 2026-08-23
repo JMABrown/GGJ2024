@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="170949ce-47a7-45c7-ace8-d44e8637718c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Managers/GameFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Managers/GameFlowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/InGameMenuManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Rendering/PostProcessingProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rendering/PostProcessingProfile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +115,7 @@
       <updated>1769863386297</updated>
       <workItem from="1769863389102" duration="39307000" />
       <workItem from="1787405494982" duration="5035000" />
-      <workItem from="1787412906764" duration="16049000" />
+      <workItem from="1787412906764" duration="17624000" />
     </task>
     <servers />
   </component>
