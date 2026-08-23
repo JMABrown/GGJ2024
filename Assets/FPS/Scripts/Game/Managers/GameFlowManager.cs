@@ -37,6 +37,7 @@ namespace Unity.FPS.Game
         {
             EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
             EventManager.AddListener<PlayerDeathEvent>(OnPlayerDeath);
+            Application.targetFrameRate = 22;
         }
 
         void Start()
