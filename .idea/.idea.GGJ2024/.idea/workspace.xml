@@ -5,7 +5,234 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="170949ce-47a7-45c7-ace8-d44e8637718c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/LoseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/LoseScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2024/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/GameHUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/GameHUD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/InGameMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Managers/GameFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Managers/GameFlowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/01-Introduction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/01-Introduction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/02-First-Play.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/02-First-Play.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/03-Exit-Play.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/03-Exit-Play.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/04-Hierarchy-Intro.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/04-Hierarchy-Intro.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/05-Select-Object.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/05-Select-Object.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/06-Inspector-Intro.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/06-Inspector-Intro.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/07-Edit-Gravity.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/07-Edit-Gravity.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/08-Play-New-Speed.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/08-Play-New-Speed.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/09-Exit-Play.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/09-Exit-Play.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/10-Done.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/10-Done.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/Playtest-Walkthrough.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/Playtest-Walkthrough.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Hiearchy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Hiearchy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Inspector.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Inspector.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Play.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Play.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Select-Gameobject.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Select-Gameobject.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Select-Property.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/1_GetStarted/WT-Select-Property.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/01-Introduction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/01-Introduction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/019-Select-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/019-Select-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/020-Bake-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/020-Bake-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/03-Hand-Tool.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/03-Hand-Tool.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/04-Try-Hand-Tool.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/04-Try-Hand-Tool.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/05-Orbit-Scene.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/05-Orbit-Scene.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/06-Zoom-Scene.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/06-Zoom-Scene.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/071-Select-Object.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/071-Select-Object.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/072-Frame-Object.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/072-Frame-Object.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/08.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/08.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/09.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/09.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/13-Spawn-Room.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/13-Spawn-Room.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/17-Select-Move.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/17-Select-Move.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/18-Move-Object.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/18-Move-Object.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/50-Project-Window.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/50-Project-Window.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/60-Done.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/60-Done.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/Add-A-Room-Walkthrough.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/Add-A-Room-Walkthrough.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/RoomAssetLayout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/RoomAssetLayout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Bake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Bake.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Hierarchy-and-Scene.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Hierarchy-and-Scene.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Move-Object.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Move-Object.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Orbit-Hand-Tool.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Orbit-Hand-Tool.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Pan-Hand-Tool.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Pan-Hand-Tool.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Project-Window.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Project-Window.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-Hand-Tool.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-Hand-Tool.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-Move.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-Move.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-and-Frame.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Select-and-Frame.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Zoom-Scene.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/2_AddARoom/WT-Zoom-Scene.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/01-Introduction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/01-Introduction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/02-Select-and-Frame - delete.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/02-Select-and-Frame - delete.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/03-Select-Material.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/03-Select-Material.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/04-Change-Albedo.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/04-Change-Albedo.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/05-Other-Materials - delete.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/05-Other-Materials - delete.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/06-Play-Game - delete.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/06-Play-Game - delete.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/07-Exit-Play - delete.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/07-Exit-Play - delete.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/08-Done.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/08-Done.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/Edit-Colors-Walkthrough.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/Edit-Colors-Walkthrough.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/LevelMaterialLayout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/LevelMaterialLayout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/WT-Change-Color.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/WT-Change-Color.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/WT-Select-Material.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/3_ChangeColors/WT-Select-Material.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/005.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/005.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/015.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/015.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/031.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/031.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/032.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/032.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/040.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/040.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/Add-Enemy-Bot-Walkthrough.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/Add-Enemy-Bot-Walkthrough.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/EnemyPrefabLayout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/EnemyPrefabLayout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Drag-Prefab.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Drag-Prefab.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Move-Object.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Move-Object.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Scale-Object.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Scale-Object.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Move.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Move.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Prefab.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Prefab.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Scale.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/4_AddEnemyBot/WT-Select-Scale.mov.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-01.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-01.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-05.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-05.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-10.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-10.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-15.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-15.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-20.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-20.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-Walkthrough.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/5_AddAnAsset/AddAnAsset-Walkthrough.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/5 BuildAndPublish.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/5 BuildAndPublish.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Build your project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Build your project.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 005.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 005.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 010.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 010.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 013.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 013.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 014.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 014.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 015.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/BuildAndPublish 015.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/PublishCriteria.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/PublishCriteria.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/PublishCriteria.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Criteria/PublishCriteria.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/PlayLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/PlayLogo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Publish to Unity Play window.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Publish to Unity Play window.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Switch to the Web platform.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/Switch to the Web platform.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/header-completed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/6_BuildAndPublish/header-completed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WT-Essentials.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WT-Essentials.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WT-JuniorPgmr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WT-JuniorPgmr.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext 01.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext 01.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext 02.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext 02.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/7_WhatsNext/WhatsNext.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/BotIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/BotIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/DialogHeader_FPS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/DialogHeader_FPS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/FPSIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/FPSIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Pop.aiff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Pop.aiff.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/SuperchargeYourGame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/SuperchargeYourGame.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Tutorial Project Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Tutorial Project Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialCallbacks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialHeader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialHeader.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialLayout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/TutorialLayout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Tutorials.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/Tutorials.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/WelcomeDialog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/WelcomeDialog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/import-asset@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Tutorials/import-asset@2x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Rendering/Default_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rendering/Default_PipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +338,7 @@
       <updated>1769863386297</updated>
       <workItem from="1769863389102" duration="39307000" />
       <workItem from="1787405494982" duration="5035000" />
-      <workItem from="1787412906764" duration="18218000" />
+      <workItem from="1787412906764" duration="21971000" />
     </task>
     <servers />
   </component>

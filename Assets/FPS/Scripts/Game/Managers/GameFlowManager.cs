@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 namespace Unity.FPS.Game
@@ -47,6 +50,15 @@ namespace Unity.FPS.Game
 
         void Update()
         {
+            //FilmGrain filmGrainDetails;
+            //if (VolumeManager.instance != null && VolumeManager.instance.globalDefaultProfile != null)
+            //{
+            //    if (VolumeManager.instance.globalDefaultProfile.TryGet(typeof(FilmGrain), out filmGrainDetails))
+            //    {
+            //        filmGrainDetails.intensity.value = Random.value;
+            //    }
+            //}
+
             if (GameIsEnding)
             {
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / EndSceneLoadDelay;
